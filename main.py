@@ -33,14 +33,14 @@ os.mkdir('files')
 fileList = []
 
 for file in files:
-    shortID = file['version']+'-'+generate_hash(f'{file['tag']}-{file['version']}')[:6].upper()
+    shortID = file['version']+'-'+generate_hash(f"{file['tag']}-{file['version']}")[:6].upper()
     downUrl = file['link']
 
     fileList.append({
         "tag":file['tag']
     })
 
-    with open(f'files/{file['tag']}.json','w',encoding='UTF-8') as f:
+    with open(f"files/{file['tag']}.json",'w',encoding='UTF-8') as f:
         f.write(json.dumps({
             "shortId":shortID,
             "downloadUrl":downUrl
